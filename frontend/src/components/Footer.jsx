@@ -96,7 +96,7 @@ export const Footer = () => {
                 return (
                   <li key={i}>
                     <Link
-                      href={link.href}
+                      to={link.href}
                       className={`${footerStyles.linkItem} ${iconColors.cyan}`}
                       style={{ transitionDelay: `${i * 80}ms` }}
                     >
