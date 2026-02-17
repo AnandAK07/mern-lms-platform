@@ -28,6 +28,7 @@ import {
   Shield,
   HandHelping,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 const iconMap = {
   Twitter,
   Instagram,
@@ -94,7 +95,7 @@ export const Footer = () => {
                 let Icon = iconMap[link.iconKey] || ArrowRight;
                 return (
                   <li key={i}>
-                    <a
+                    <Link
                       href={link.href}
                       className={`${footerStyles.linkItem} ${iconColors.cyan}`}
                       style={{ transitionDelay: `${i * 80}ms` }}
@@ -103,7 +104,7 @@ export const Footer = () => {
                         className={`${footerStyles.linkIcon} ${iconColors.cyan}`}
                       />
                       <span className="truncate">{link.name}</span>
-                    </a>
+                    </Link>
                   </li>
                 );
               })}
@@ -234,15 +235,19 @@ export const Footer = () => {
               })}
             </div>
             <div className={footerStyles.designCredit}>
-                <div className={footerStyles.designCreditContainer}>
-                    <div className={footerStyles.designCreditGradient}></div>
-                    <p className={footerStyles.designCreditText}>
-                        Designed by{" "}
-                        <a href={contactInfo.website} target="_blank" className={footerStyles.designCreditLink}>
-                            {contactInfo.designBy}
-                        </a>
-                    </p>
-                </div>
+              <div className={footerStyles.designCreditContainer}>
+                <div className={footerStyles.designCreditGradient}></div>
+                <p className={footerStyles.designCreditText}>
+                  Designed by{" "}
+                  <a
+                    href={contactInfo.website}
+                    target="_blank"
+                    className={footerStyles.designCreditLink}
+                  >
+                    {contactInfo.designBy}
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
         </div>
