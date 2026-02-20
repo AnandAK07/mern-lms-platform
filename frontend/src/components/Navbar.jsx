@@ -30,7 +30,7 @@ export const Navbar = () => {
   const { isSignedIn } = useUser();
   const { getToken } = useAuth();
 
-  // for mobile toggle
+  // for mobile toggle 
   const [isOpen, setIsOpen] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -203,6 +203,10 @@ export const Navbar = () => {
                     openSignUp({});
                     setIsOpen(false);
                   }}
+                  className={
+                    navbarStyles.mobileCreateAccountButton ??
+                    navbarStyles.mobileLoginButton
+                  }
                 >
                   <span>Create Account</span>
                 </button>
@@ -214,9 +218,9 @@ export const Navbar = () => {
             </div>
           </div>
         </div>
-        <div className={navbarStyles.backgroundPattern}>
-          <div className={navbarStyles.pattern}></div>
-        </div>
+      </div>
+      <div className={navbarStyles.backgroundPattern}>
+        <div className={navbarStyles.pattern}></div>
       </div>
     </nav>
   );
